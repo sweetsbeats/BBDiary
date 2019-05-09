@@ -4,7 +4,7 @@
 
 /* CONFIG_BBDIARY_HOMEPAGE
  * A URL to this diary */
-define("CONFIG_BBDIARY_HOMEPAGE", "http://bbdiary.prettyboytellem.com/");
+define("CONFIG_BBDIARY_HOMEPAGE", "https://sweetsbeats.herokuapp.com/");
 /* CONFIG_DIARY_FSPATH
  * The directory you will be serving */
 define("CONFIG_DIARY_FSPATH", "/var/http/bbdemo");
@@ -20,7 +20,7 @@ define("CONFIG_LIGHTTPD_XSENDFILE", false);
 /* CONFIG_CLEAN_URL
  * Enable only if you have followed the Clean URL steps laid
  * out in the README */
-define("CONFIG_CLEAN_URL", true);
+define("CONFIG_CLEAN_URL", false);
 
 /*******************************************************
 * You probably don't need to touch anything below here *
