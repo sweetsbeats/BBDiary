@@ -100,7 +100,7 @@ else if (is_file($abspath)) {
 			font-weight: lighter; }
 		h1 a, h2 a, h3 a { text-decoration: none; }
 	/* Reader */
-		main { max-width: 65em;
+		main { max-width: 40em;
 			margin: auto;
 			padding: 10px;
 			background: white;
@@ -136,12 +136,51 @@ else if (is_file($abspath)) {
 			padding-left: 8px;
 			text-decoration: none; }
 		nav a:first-child { border-left: 1px solid; }
+
+		.about { max-width: 20em;
+				
+					display:flex;
+					justify-content:center;
+					align-items: center;
+
+		}
+		.aboutContainer{ /*padding-right: 12em;*/
+						 display:flex;
+					     justify-content:center;
+						 align-items:flex-end;}
+		.aboutIMG { /*padding-right: 8em;*/
+					border-radius:10px;
+					border:2px solid;
+					
+		}
+		.aboutText {padding-left:10px;
+					font-size: 19px;
+					/*text-decoration: none;*/
+					font-weight: 100}
+		.aboutTT {padding-left:10px;
+					font-size: 18px;
+					/*text-decoration: none;*/
+					font-weight: 100}
+
 	</style>
 </head>
 <body><main>
 <header>
-<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">Dev blog</a>
-<a style="display:flex;justify-content:center;align-items:flex-end;">Awa</a></h1>
+<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">Hello!</a>
+	<div class="about">
+		<div class="aboutContainer">
+		<image src="pfp.png" width="128"height="128" class="aboutIMG">
+		</image>
+		
+		</div>
+		<div>
+		<div class="aboutText"> I make video games and write software.
+								Grew up on N64/Gamecube, heavily inspired by Harvest Moon, Animal Crossing, Zelda, etc.
+								</div>
+		<div class="aboutTT"> Things I love:  &nbsp;Beer, my cats, cold weather, Linux</div>
+		</div>
+	</div>
+</h1>
 <nav><?php
 		$chunks = explode('/', $relpath);
 		if (empty($chunks[count($chunks)-1]))
