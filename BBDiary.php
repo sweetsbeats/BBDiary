@@ -66,7 +66,7 @@ else if (is_file($abspath)) {
 <!DOCTYPE HTML>
 <HTML>
 <head>
-	<title>My BBDiary</title>
+	<title>Dev blog</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- BBDiary Favicon -->
 	<link href="data:image/ico;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQA
@@ -156,7 +156,7 @@ else if (is_file($abspath)) {
 			font-weight: lighter; }
 		h1 a, h2 a, h3 a { text-decoration: none; }
 	/* Reader */
-		main { max-width: 34em;
+		main { max-width: 50em;
 			margin: auto;
 			padding: 10px;
 			background: white;
@@ -196,7 +196,8 @@ else if (is_file($abspath)) {
 </head>
 <body><main>
 <header>
-<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">BBDiary</a></h1>
+<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">Dev blog</a>
+<a style="display:flex;justify-content:center;align-items:flex-end;">Awa</a></h1>
 <nav><?php
 		$chunks = explode('/', $relpath);
 		if (empty($chunks[count($chunks)-1]))
