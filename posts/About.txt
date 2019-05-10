@@ -1,0 +1,13 @@
+This blog is a replacement for [url=https://sweetsbeats.neocities.org/]my old neocities page[/url]. 
+I don't plan on taking down the old page, since I'm too lazy to move the only post there over to here.
+The reason for switching was to be able to run serverside PHP, which allows me to use BBDiary; 
+A neat piece of software written by a fantastic friend of mine, [url=https://prettyboytellem.com/]Yumi![/url]
+
+I plan on using this site to create semi-frequent updates on whatever I'm hacking at, as well 
+as a dumping grounds for more journal like posts. 
+
+
+
+[url=https://github.com/sweetsbeats]My github[/url]
+
+[url=https://github.com/yumi-xx/BBDiary]BBDiary repository[/url]

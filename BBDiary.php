@@ -144,7 +144,7 @@ else if (is_file($abspath)) {
 					align-items: center;
 
 		}
-		.aboutContainer{ padding-left: 7px;
+		.aboutContainer{ padding-left: 5px;
 						 display:flex;
 					     justify-content:center;
 						 align-items:flex-end;}
