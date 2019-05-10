@@ -5,7 +5,7 @@ buisness model, I can now run a far better blog than my old neocities page!
 I will say though, tinkering with the PHP file was a solid reminder of why I dislike web-dev.
 I might dive back in and add image embedding, though I'm not sure if that's BBCode complaiant (frick the rules).
 
-I'm still debating on whether or not to leave to fork repo I made public; On one hand it's
+I'm still debating on whether or not to leave the fork repo I made public; On one hand it's
 an easy way to having change logs, however I feel like updating the blog shouldn't count 
 as code commits. On the other, other hand, (hopefully) most of the posts will be development related.
 Who knows!  
