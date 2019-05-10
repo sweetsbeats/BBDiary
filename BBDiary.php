@@ -144,7 +144,7 @@ else if (is_file($abspath)) {
 					align-items: center;
 
 		}
-		.aboutContainer{ /*padding-right: 12em;*/
+		.aboutContainer{ padding-left: 7px;
 						 display:flex;
 					     justify-content:center;
 						 align-items:flex-end;}
@@ -153,20 +153,21 @@ else if (is_file($abspath)) {
 					border:2px solid;
 					
 		}
-		.aboutText {padding-left:10px;
+		.aboutText {padding-left:8px;
 					font-size: 19px;
 					/*text-decoration: none;*/
 					font-weight: 100}
 		.aboutTT {padding-left:10px;
 					font-size: 18px;
 					/*text-decoration: none;*/
-					font-weight: 100}
+					font-weight: 100;
+					line-height: 2;}
 
 	</style>
 </head>
 <body><main>
 <header>
-<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">Hello!</a>
+<h1><a href="<?php print CONFIG_BBDIARY_HOMEPAGE?>">Hello! </a>
 	<div class="about">
 		<div class="aboutContainer">
 		<image src="pfp.png" width="128"height="128" class="aboutIMG">
@@ -174,8 +175,8 @@ else if (is_file($abspath)) {
 		
 		</div>
 		<div>
-		<div class="aboutText"> I make video games and write software.
-								Grew up on N64/Gamecube, heavily inspired by Harvest Moon, Animal Crossing, Zelda, etc.
+		<div class="aboutText"> Hello, I'm sweets; I make video games and write software.
+								I grew up playing on N64/Gamecube, and I'm heavily inspired by Harvest Moon, Animal Crossing, Zelda, etc.
 								</div>
 		<div class="aboutTT"> Things I love:  &nbsp;Beer, my cats, cold weather, Linux</div>
 		</div>
