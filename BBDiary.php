@@ -7,7 +7,7 @@
 define("CONFIG_BBDIARY_HOMEPAGE", "https://sweetsbeats.herokuapp.com/");
 /* CONFIG_DIARY_FSPATH
  * The directory you will be serving */
-define("CONFIG_DIARY_FSPATH", "/app/");
+define("CONFIG_DIARY_FSPATH", "/app/posts/");
 /* CONFIG_APACHE2_XSENDFILE
  * Enable this if you are running Apache with XSendfile */
 define("CONFIG_APACHE2_XSENDFILE", false);
