@@ -81,7 +81,8 @@ else if (is_file($abspath)) {
 		body { background-color: aliceblue; color: black;
 			/* Starry background */
 			background-image: url("background.jpg");
-			background-repeat: no-repeat;
+			background-repeat: repeat;
+			background-attachment: fixed;
 			background-size: 100%;
 
 			font-family:"ヒラギノ角ゴ Pro W3",
