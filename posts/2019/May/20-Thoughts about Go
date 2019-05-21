@@ -1,0 +1,33 @@
+For the past week or so, I've been using Go to do a few various small tasks.
+It isn't my first time using the language, as I tinkered with it a bit back in 2016,
+but ultimately came to the conclusion that it was a somewhat confusing modern attempt at C, and so I shrugged it off.
+I still think that statement applies; I'm not a fan of Go's github importing, and I don't really care for it's
+Python inspired enforced formatting.
+
+That being said, when compared to python Go is a god-send. As someone who's most comfortable in C/C++, I have strong opinions
+in favour of strongly typed, compiled languages, and Go happens to fit into that intersection quite nicely. A few weeks prior,
+I was using Python for a snake AI competition (which I won beginners bracket!) and found that even using a moderate sized class
+produced a noticeable delay in the response times of the snake. I stuck with Python as a learning exercise and because there was
+templating provided for boilerplate networking stuff, but if it was for just about anything else I would have most likely just
+switched to C++ for performance. Say what you will about premature optimizations, but when
+[url=https://wiki.python.org/moin/PythonSpeed/PerformanceTips] you need guides on how to ensure your language doesn't chug[/url],
+you have an issue.
+
+The sad thing is, I didn't mind Python's syntax, in fact it was nice to have access to high level language features for once.
+I might harbor an illogical love C++, but that doesn't mean I'm opposed to for each loops or multiple return values (if it
+wasn't for the ugliness of tuple-ing return types I might do it more often). What I dislike, is that I have to give up on
+out of the box speed that should be inherent, unless I'm willing to jump through a few extra hoops for something like Iron Python,
+and I just can't be fucking bothered.
+
+Go on the other hand, runs incredibly fast. Given the right circumstances (and a lot of squinting),
+[url=https://sites.google.com/site/mytechnicalcollection/programming/golang/golang-vs-all/benchmark-go-vs-c]it can even out-perform C[/url].
+However, performance isn't AS important when [url=https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/go-gpp.html]you're tailgating C++[/url], all while offering the same kind of high level language features python does.
+
+This in my opinion, is what makes Go a god-send relative to Python. So why isn't Go my GOTO language? [url=https://blog.golang.org/ismmkeynote]It's garbage collection[/url]. Now, to be fair, Go's GC isn't that bad, however it still is, and that's the issue.
+I write games, and inevitably that means I'm going to need to allocate memory dynamically, and having GC managing those lifetimes
+is costly. For all Go is worth, it still eats 25% of the CPU during a GC cycle. I wrote a really inefficient
+[url=https://github.com/nenechi-fan-club/CHIP-8-emu]CHIP-8 emulator using C++ and SDL2[/url], and it only eats 0.2% CPU
+consistently (and 10% of the GPU ;P). While that may scale for things like servers, it doesn't for video games.
+
+I like Go, and I'll probably continue to use it as a replacement to Python, where it seems more efficient on time to use it
+instead of C++. Today I used it to write [url=https://github.com/sweetsbeats/Famicompo-mini-10-scraper]a script to rename some files[/url] to test it's capability at Python-like tasks, and I'd say it was a success.
