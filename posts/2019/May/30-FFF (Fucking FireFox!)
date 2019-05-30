@@ -5,7 +5,7 @@ That solves a very obvious hole in browser security for the smooth brained among
 
 Why do I care though?
 
-I like having a [url=]new tab homepage[/url], and this is (and logically SHOULD be) a local webpage. Connect the dots yet? My old addon that set my new tab homepage (and others like it) have gone defunct!
+I like having a [url=https://files.catbox.moe/56uu0s.gif]new tab homepage[/url], and this is (and logically SHOULD be) a local webpage. Connect the dots yet? My old addon that set my new tab homepage (and others like it) have gone defunct!
 So now I'm tasked with figuring out how to recreate this in FF Quantum (I did it BTW).
 
 The first thing I did was google the issue. A lot of Reddit results, and so I bit the bullet. Let me tell you something; /r/firefox is the biggest pit of unintellegent mouth breathing drool machines I've ever fucking seen.
@@ -43,4 +43,6 @@ try {
 }
 [/code]
 
-If there's an issue with this, @ me on twitter or something.
+If there's an issue with this, @sweetsbeats_ on twitter or something.
+
+/rant
