@@ -1,0 +1,46 @@
+Quick rant. FUCK. FIREFOX.
+
+At some point around when the Quantum update came out, Mozilla decided it would be a good idea to remove the ability for addons to access local files, and they were right; that's a good idea!~
+That solves a very obvious hole in browser security for the smooth brained among their userbase.
+
+Why do I care though?
+
+I like having a [url=]new tab homepage[/url], and this is (and logically SHOULD be) a local webpage. Connect the dots yet? My old addon that set my new tab homepage (and others like it) have gone defunct!
+So now I'm tasked with figuring out how to recreate this in FF Quantum (I did it BTW).
+
+The first thing I did was google the issue. A lot of Reddit results, and so I bit the bullet. Let me tell you something; /r/firefox is the biggest pit of unintellegent mouth breathing drool machines I've ever fucking seen.
+I mean, that's what one [b]should[/b] expect from active users of a subreddit for a FUCKING WEB BROWSER, but it still hurts to look at none the less.
+
+Their genius solution? Host your own webserver using XAMPP! Holy shit.
+
+Luckily on one thread, ONE post burried and downvoted, someone suggested using an autoconfig. He posted the 8 lines of JavaScript that enables the new tab homepage which worked from the browser console, and how to have it automatically
+entered on startup. Dog bless this man. A saint among drooling sub-humans.
+Mozilla didn't want to make this easy though! My autoconfig didn't work when I set it up, and so for the last week I've been casually dropping 30 minutes into gooling for answers, and I finally got some.
+
+So, you want to have a new tab homepage in FireFox 67? Don't want to waste PC resources HOSTING YOUR OWN FUCKING WEBSERVER? here we go.
+
+[code]
+> Enable devtools.chrome.enabled to true in about:config
+> Go to your firefox install dir
+> make a file called autoconfig.js in the subdirectory defaults/pref/
+> Make a file called config.js beside firefox.exe
+[/code]
+
+Copy and paste this to the contents of autoconfig.js:
+[code]
+pref("general.config.sandbox_enabled", false);
+pref("general.config.obscure_value", 0);
+pref("general.config.filename", "config.js");
+[/code]
+
+Copy and paste this to the contents of config.js:
+[code]
+try {
+  Components.classes["@mozilla.org/browser/aboutnewtab-service;1"]
+    .getService(Components.interfaces.nsIAboutNewTabService)
+    .newTabURL = "file:///C:/path/to/homepage/index.html";
+} catch(e){ 
+}
+[/code]
+
+If there's an issue with this, @ me on twitter or something.
