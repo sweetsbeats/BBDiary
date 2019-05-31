@@ -13,7 +13,7 @@ I mean, that's what one [b]should[/b] expect from active users of a subreddit fo
 
 Their genius solution? Host your own webserver using XAMPP! Holy shit.
 
-Luckily on one thread, ONE post burried and downvoted, someone suggested using an autoconfig. He posted the 8 lines of JavaScript that enables the new tab homepage which worked from the browser console, and how to have it automatically
+Luckily on one thread, ONE post buried and downvoted, someone suggested using an autoconfig. He posted the 8 lines of JavaScript that enables the new tab homepage which worked from the browser console, and how to have it automatically
 entered on startup. Dog bless this man. A saint among drooling sub-humans.
 Mozilla didn't want to make this easy though! My autoconfig didn't work when I set it up, and so for the last week I've been casually dropping 30 minutes into gooling for answers, and I finally got some.
 
