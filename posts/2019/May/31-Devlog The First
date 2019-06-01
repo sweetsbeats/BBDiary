@@ -1,0 +1,30 @@
+So finally after like 3 weeks of programming (way too long) I finally hit my engine benchmark. 
+I want to use this post to explain the basic achitecture of my engine and show off what currently can do,
+and lay out publicly what I want it to do. 
+
+First, a quick foreword about game engines; A game engine is just what drives the game, or what it's built off.
+When I say engine you probably think of Unity or Unreal, and while you're right, what my engine does and what they do are very different.
+Unity, Unreal, GM:S, ect. are all what you call "middleware engines". They're designed to make everything, to be relatively flexible, and to
+be as easy as possible to interface with and mold your workflow. [b]This is NOT what my engine does[/b]. My engine isn't a middleware engine,
+it's just a dinky framework built to handle game data I shove into it. Things like physics, the games state and many other things are baked into the engine,
+as they should be. Just wanted to make that distinction for those who aren't deep into gamedev.
+
+OKAY.
+
+My currently un-named engine is built in C++, and uses SFML(for graphics, audio, utility), EntityX(entity and state management) and TMXlite(Loading [url=https://www.mapeditor.org/]Tiled map[/url]).
+It's designed to use Tiled as it's main level editor, and this means just about everything design related happens inside Tiled. 
+[url=https://files.catbox.moe/qd9eyq.mp4]Here's an example of what I'm talking about.[/url]
+The engine finds the player in the map data, matches it up to a prefab (pre-defined game object in the code) and places it in the game world. The engine doesn't care what object
+it runs into, it just sees if it can match it to a prefab and spawn it if it can. [url=https://files.catbox.moe/f1y8xm.mp4]Here is an extreme (but funny) example of this in action![/url] 
+The red blocks you see in the editor represent solid walls, and are spawned the same way. You can also see the Player in blue, and tagged. 
+The engine is able to scale like this, mostly because I am using an ECS(Entity-Component-System) paradigm. I won't get too far into this so google it if it interests you, 
+but the idea is entities are composed of components, and systems are where the logic happens, acting on the components. 
+
+[b]What's next?[/b]
+
+Well, first I need to refactor what I have. There's still some [url=https://files.catbox.moe/9w76iw.mp4]bugs[/url] I need to sort out, and some code that I would like to clean up and comment on before moving on,
+but I am extremely happy with where I am right now. I've done a lot of engine-type projects in the past to little success. I was very reluctant for a long time to use a library
+like EntityX, and as a result I tried to write my own despite not being capable at the time. It feels good to admit defeat, and accept when you're wrong. This time I don't feel like
+I'm re-inventing the wheel (at least not that much, it is engine dev ;P), and like this progress is far more meaningful.
+
+I'll probably post an update in the next week or so detailing where I'm going from here so stay tuned for that. I also post unrelated blog posts from time to time.
