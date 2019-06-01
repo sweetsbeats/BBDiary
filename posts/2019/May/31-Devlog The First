@@ -1,5 +1,5 @@
 So finally after like 3 weeks of programming (way too long) I finally hit my engine benchmark. 
-I want to use this post to explain the basic achitecture of my engine and show off what currently can do,
+I want to use this post to explain the basic architecture of my engine and show off what currently can do,
 and lay out publicly what I want it to do. 
 
 First, a quick foreword about game engines; A game engine is just what drives the game, or what it's built off.
