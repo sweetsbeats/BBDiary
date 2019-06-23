@@ -1,0 +1,20 @@
+20 days later, and I think my burnout has fucked off. So yay for that! Things on the contract work side have
+gotten a little better, and the engine has progressed a bit (but not a lot). For the past 20 days
+I've admittedly done very little, and what I did blew up in spectacular fashion.
+
+I ended up implementing chunk-based culling, which basically means if you can't see the chunk, it won't be drawn.
+[url=https://files.catbox.moe/27tlf4.mp4]Here is an example of that.[/url] To give context, I've lied to the engine about the size
+of the window! It thinks that the viewport is 300x200 (which it normally is), however for the example I set it to 800x600, so I could
+actually confirm and then capture the logic in action.
+
+Next up was to add more chunks to the level to test and see if it worked. [url=https://files.catbox.moe/f9vamp.gif]Turns out it didn't[/url],
+so I had some fun figuring that out. [url=https://files.catbox.moe/c2c9z0.png]I got it eventually though.[/url].
+
+As of right now, I'm part-way through working on [url=https://files.catbox.moe/uns1ml.mp4]an animation system.[/url]
+In my past post animations wasn't even on the mind as I thought they would be a quick implementation I could do in an afternoon,
+however after a first pass attempt I quickly came to realize that they would require be to step back and examine my options.
+I'm pretty sure it won't change at this point, however I'll avoid an in depth explanation for now
+in the event that things radically shift.
+
+On a totally unrelated note to game engine stuff, I'll be starting work on an NES emulator soon (for fun), and so I may do a write up at some
+point on the architecture behind it, and the adversities of recreating the NES' many quirks (Like it's fucking CPU memory mapping BS).
