@@ -40,17 +40,17 @@ a helper function to define horizontal sets of frames, so adding a set of frames
 
 [code]
 animationFrames.insert(std::make_pair(animation::player::IDLE,
-				      animation::defHorizontalAnimFrames(sf::IntRect(0,0,16,16),
-									 sf::IntRect(144,0,16,16)
-		       )));
+  animation::defHorizontalAnimFrames(sf::IntRect(0,0,16,16),
+                                     sf::IntRect(144,0,16,16)
+)));
 animationFrames.insert(std::make_pair(animation::player::WALK_RIGHT,
-				      animation::defHorizontalAnimFrames(sf::IntRect(0,16,16,16),
-									 sf::IntRect(80,16,16,16)
-		       )));
+  animation::defHorizontalAnimFrames(sf::IntRect(0,16,16,16),
+                                     sf::IntRect(80,16,16,16)
+)));
 animationFrames.insert(std::make_pair(animation::player::WALK_LEFT,
-				      animation::defHorizontalAnimFrames(sf::IntRect(0,16,-16,16),
-									 sf::IntRect(80,16,-16,16)
-		      )));
+  animation::defHorizontalAnimFrames(sf::IntRect(0,16,-16,16),
+				     sf::IntRect(80,16,-16,16)
+)));
 [/code]
 
 Hopefully that's not too messy. Basically just give 'defHorizontalAnimFrames' the first and last frame
