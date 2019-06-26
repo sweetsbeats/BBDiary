@@ -1,0 +1,70 @@
+Animations are finished! I semi-jinxed myself in my last post as well. A few things changed around,
+but definitely for the better. Now for a dissection of my unnamed engine's animation system. Unfortunately,
+there's no easy way to explain it as the shit is complicated, even for me. If you understand what ECS is
+in some kind of detail, then you should be fine.
+
+
+Due to the constraints of EntityX, an entity may only have one of any given component at a time.
+I improvised around this by designing the AnimationComponent to hold very generalized data that can be
+swapped in and out. This also meant that the AnimationComponent really shouldn't hold onto any actual
+resources. All of the important information like texture atlas and the frame positions are all stored
+inside the render system(more on that later). Essentially this means that all the AnimationComponent
+actually has, is a vector of frames corresponding to a master animation atlas, and some flags like if
+it's flipped, or is to play once/indefinitely.
+
+In order to keep the codebase from referencing the render system everywhere just to change animations,
+I used EntityX's built in events to disseminate changes in animations.
+I wrap a handle to the AnimationComponent as well as relevant data to update the component in an
+'AnimationTrigger', which can disseminate from just about anywhere. The render system is 'subscribed'
+to AnimationTriggers, and will switch the given AnimationComponent's data out for the new information
+requested.
+
+This is what a call to change an animation looks like:
+
+[code]
+//anim_h is an entityx component handle
+events.emit<AnimationTrigger>(anim_h, animation::player::IDLE, true, false);
+[/code]
+
+"animation::player::IDLE" is a pre-defined std::size_t constant hashed from a string.
+All animation names are hashed like this, so that I don't have to pass around and compare
+strings everywhere (coughcoughyanderedevcoughcough). The only downside to this is having to
+define a new animation, but it's a very quick copy-paste job anyways. When the render system
+receives this call, it will reach into it's big map of frame data and see if a set of frames has
+been defined for the parameter. It will return the vector if there is, then swap that into
+the AnimationComponent, and restart the animation's timer.
+
+The last, and arguably most tedious part of the animation system is defining the animation's frames.
+Nothing special is done here, just inserting std::pair's of std::size_t and vectors. I did write
+a helper function to define horizontal sets of frames, so adding a set of frames looks like this:
+
+[code]
+animationFrames.insert(std::make_pair(animation::player::IDLE,
+				      animation::defHorizontalAnimFrames(sf::IntRect(0,0,16,16),
+									 sf::IntRect(144,0,16,16)
+		       )));
+animationFrames.insert(std::make_pair(animation::player::WALK_RIGHT,
+				      animation::defHorizontalAnimFrames(sf::IntRect(0,16,16,16),
+									 sf::IntRect(80,16,16,16)
+		       )));
+animationFrames.insert(std::make_pair(animation::player::WALK_LEFT,
+				      animation::defHorizontalAnimFrames(sf::IntRect(0,16,-16,16),
+									 sf::IntRect(80,16,-16,16)
+		      )));
+[/code]
+
+Hopefully that's not too messy. Basically just give 'defHorizontalAnimFrames' the first and last frame
+and you get a vector back, wooo!
+
+This took me longer than expected, but now that it's working I quite enjoy how it's designed. I still
+haven't implemented everything I want with animations, but that'll be enough for now. I'm currently
+getting into the design phase of implementing menus. UI and menus in ECS is apparently some of the worst work
+to do in this paradigm, and so I want to try and get it as right as I can the first time. Unfortunately,
+that means another long gap between blog posts, but I'll live, and hopefully so will you.
+
+[url=https://files.catbox.moe/9x8bdf.mp4]Here's what it looks like now that it's working.[/url] Green
+on green wasn't a great choice for visibility, so here's what the animations look like on their own.
+Note they might not be the same speed as in game.
+
+[url=https://files.catbox.moe/k3rsym.gif]here[/url]
+[url=https://files.catbox.moe/xrhi32.gif]here[/url]
